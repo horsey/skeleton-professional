@@ -4,15 +4,17 @@ var _ = require('lodash'),
 http = function http(apiMethod) { 
     return function apiHandler (req, res, next) {
 	var object = req.body, 
-            options = _.extend({}, req.files, req.query, req.params, {
-		context: { 
-		    partnerId: req.ctx.partnerId ? req.ctx.partnerId : null, 
-		    userId: req.ctx.userId ? req.ctx.userId : null,
-		    userType: req.ctx.userType ? req.ctx.userType : null,
-		    token: req.ctx.token ? req.ctx.token : null,
-		    partnerName: req.ctx.partnerName ? req.ctx.partnerName : null
-		}
-	    });
+            // options = _.extend({}, req.files, req.query, req.params, {
+	    // 	context: { 
+	    // 	    partnerId: req.ctx.partnerId ? req.ctx.partnerId : null, 
+	    // 	    userId: req.ctx.userId ? req.ctx.userId : null,
+	    // 	    userType: req.ctx.userType ? req.ctx.userType : null,
+	    // 	    token: req.ctx.token ? req.ctx.token : null,
+	    // 	    partnerName: req.ctx.partnerName ? req.ctx.partnerName : null
+	    // 	}
+	    // });
+
+	options = {};
 
 	if (_.isEmpty(object)) { 
 	    object = options; 

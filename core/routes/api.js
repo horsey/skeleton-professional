@@ -110,9 +110,10 @@ apiRoutes = function apiRoutes(middleware) {
 
     //Test API
     router.get('/message',                    api.http(api.test.message));
-    router.post('/refer',                     api.http(api.test.refer));
-    router.get('/asynctest',                  api.http(api.practitioner.partners));
-    router.post('/time',                      api.http(api.test.time));
+    //    router.post('/refer',                     api.http(api.test.refer));
+    //    router.get('/asynctest',                  api.http(api.practitioner.partners));
+    //    router.post('/time',                      api.http(api.test.time));
+    
     return router;
 };
 
