@@ -1,5 +1,4 @@
-var favicon       = require('static-favicon'), 
-    cookieParser  = require('cookie-parser'), 
+var cookieParser  = require('cookie-parser'), 
     bodyParser    = require('body-parser'), 
     logger        = require('morgan'), 
     hbs           = require('express-handlebars'), 
@@ -11,11 +10,6 @@ var favicon       = require('static-favicon'),
      middleware    = require('./middleware'), 
     partnerApp, 
     setupMiddleware;
-
-console.log('yyy');
-console.log(routes);
-console.log(typeof routes);
-console.log('yyy');
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -31,9 +25,8 @@ setupMiddleware = function  setupMiddleware(appInstance) {
 
     partnerApp = appInstance; 
 
-    partnerApp.use(favicon());
-    partnerApp.use(logger());
-    partnerApp.use(bodyParser.json());
+    partnerApp.use(logger("combined"));
+    partnerApp.use(bodyParser.json({extended: true}));
     partnerApp.use(bodyParser.urlencoded());
     partnerApp.use(cookieParser("adsf"));
     

@@ -1,8 +1,0 @@
-var _            = require('lodash'),
-    async        = require('async');
-
-(function(Test) {
-    require('./test/message')(Test);
-    require('./test/refer')(Test);
-    require('./test/time')(Test);
-}(exports));
